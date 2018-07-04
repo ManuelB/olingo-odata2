@@ -426,7 +426,8 @@ public class JPAEdmProperty extends JPAEdmBaseViewImpl implements
                     joinColumnNames.add(name);
                     // get the correct attribute from the embeddable type
                     if(((SingularAttribute<?,?>)referencedAttribute).getType() instanceof EmbeddableType) {
-                      EmbeddableType<?> embedableTypeAttribute = (EmbeddableType<?>) ((SingularAttribute<?, ?>) referencedAttribute).getType();
+                      EmbeddableType<?> embedableTypeAttribute =
+			      (EmbeddableType<?>) ((SingularAttribute<?, ?>) referencedAttribute).getType();
                       currentRefAttribute = embedableTypeAttribute.getDeclaredAttribute(attributeOverride.name());
                     } else {
                       currentRefAttribute = referencedAttribute;
